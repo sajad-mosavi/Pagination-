@@ -1,5 +1,6 @@
 const container =document.getElementById('container');
 const numberPage =document.getElementById('number_Page');
+const getDataBtn =document.getElementById('get_data');
 console.log(numberPage)
 if(!localStorage.getItem('apiData')){
 
@@ -11,6 +12,8 @@ fetch('https://jsonplaceholder.typicode.com/users')
   })
   .catch(error => console.error('Error:', error));
 }
+getDataBtn.addEventListener('click',function(){
+  
 // بازیابی داده
 const savedData = JSON.parse(localStorage.getItem('apiData'));
 let page = 1
@@ -46,3 +49,4 @@ console.log('page',page)
 slicedArray()
 })
 };
+})
